@@ -75,8 +75,11 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'pymongo',
+        'NAME': 'mydatabase',  # Change to your actual database name
+        'CLIENT': {
+            'host': 'mongodb+srv://<username>:<password>@cluster0.xxxxx.mongodb.net/mydatabase?retryWrites=true&w=majority'
+        }
     }
 }
 
